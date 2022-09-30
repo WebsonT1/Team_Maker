@@ -1,0 +1,189 @@
+.body {
+  min-width: 100%;
+  min-height: 100vh;
+  background: url("../img/Back-view-uefa-2.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+.ml-3 {
+  margin-left: 16px;
+}
+.imtroVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.664);
+}
+.skip {
+  padding: 10px;
+  position: absolute;
+  top: 30px;
+  right: 5%;
+  z-index: 9999990;
+  width: auto;
+  height: auto;
+  color: #ffffff;
+  border-radius: 15%;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+.out {
+  max-width: 700px;
+  overflow: hidden;
+}
+.t-shirt {
+  fill: darkblue;
+  stroke: #ff0000;
+  stroke-width: 1px;
+  width: 70px;
+  height: 70px;
+  stroke-linecap: round;
+}
+.goalkeeper {
+  bottom: 10%;
+  left: 44%;
+}
+.centerfullback {
+  bottom: 30%;
+  left: 44%;
+}
+.leftfullback {
+  bottom: 45%;
+  left: 10%;
+}
+.rightfullback {
+  bottom: 45%;
+  right: 10%;
+}
+.rightattacker {
+  top: 25%;
+  right: 15%;
+}
+.leftattacker {
+  top: 25%;
+  left: 15%;
+}
+.striker {
+  top: 10%;
+  left: 45%;
+}
+
+.player-num {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  font-family: cursive;
+}
+
+.team-1 path {
+  fill: #ffffff;
+}
+.team-2 {
+  fill: rgb(0, 255, 170);
+}
+.team-3 path {
+  fill: rgb(235, 85, 255);
+}
+
+.team-3 ~ .player-num,
+.team-3 ~ .player-name {
+  color: rgb(0, 0, 0);
+}
+.team-2 ~ .player-num,
+.team-2 ~ .player-name {
+  color: rgb(0, 0, 0);
+}
+.team-1 ~ .player-num,
+.team-1 ~ .player-name {
+  color: rgb(0, 0, 0);
+}
+.player-name {
+  white-space: nowrap;
+  position: absolute;
+  left: 50%;
+  bottom: -50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  font-family: cursive;
+}
+.teamname {
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  font-family: cursive;
+}
+
+.mystry {
+  top: 5%;
+  right: 5%;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 7px;
+  border-radius: 10px;
+  z-index: 3;
+}
+.mystry::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(30deg, #009966, #663399, orange);
+  z-index: -1;
+  border-radius: 10px;
+}
+.modal-footer,
+.modal-header {
+  border: none !important;
+}
+
+.modal-content {
+  background-image: url(../img/mystreryback.jpg);
+  background-size: contain;
+}
+.mysterycard {
+  background-color: #f3ec78;
+  background-image: linear-gradient(45deg, #f3ec78, #af4261);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+}
+.clock {
+  position: absolute;
+  top: calc(50% - 335px);
+  left: 32.8%;
+  font-size: large;
+  font-weight: bold;
+  font-family: cursive;
+  color: #ffffff;
+}

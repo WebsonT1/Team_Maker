@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="./img/uefa-champions-league-seeklogo.com.svg"
+      type="image/x-icon"
+    />
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.js"
+      integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="./css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>UEFA | Home</title>
+  </head>
+  <body>
+    <!-- header open -->
+    <header class="header mb-3">
+      <div
+        class="container p-3 d-flex justify-content-between align-content-center navbar"
+      >
+        <a
+          href="#"
+          class="text-decoration-none text-body font-weight-bold m-0 logo"
+        >
+          Home || Team maker || <span class="majkh">MAJKH</span>
+        </a>
+        <select
+          name="team"
+          class="team-select"
+          id="team-select"
+          onclick="(()=> {getTeam(this.value)})()"
+        >
+          <option value="" selected disabled>Select Team</option>
+          <option value="2">For 2 team</option>
+          <option value="3">For 3 team</option>
+          <option value="4">For 4 team</option>
+        </select>
+        <a class="uefa" onclick="changeHome()"></a>
+      </div>
+    </header>
+    <!-- header close -->
+
+    <!--  Main open -->
+    <main>
+      <section>
+        <div class="container">
+          <div class="back-view">
+            <ul class="player-list"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- main close -->
+
+    <!-- Footer open -->
+    <footer class="footer">
+      <p>Copyright MAJKH 2022</p>
+    </footer>
+
+    <audio src="./music/football-1.m4a" class="mp3"></audio>
+
+    <div class="my-modal">
+      <div class="modal-back"></div>
+      <div class="modal-inner">
+        <p>
+          <span> Welcome home.</span>
+          <br />
+          <br />
+          by: Privacy Policy
+          <br />
+          <br />
+        </p>
+        <button class="ok">Ok</button>
+      </div>
+    </div>
+    >
+    <!-- Footer close -->
+    <script src="./js/index.js"></script>
+    <script>
+      $(".get").on("click", function () {
+        $(this)
+          .closest(".player-list li")
+          .find("img")
+          .clone()
+          .addClass("image")
+          .appendTo(".navbar");
+        setTimeout(function () {
+          $(".image").remove();
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

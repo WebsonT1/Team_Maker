@@ -1,0 +1,327 @@
+/* oswald-regular - latin */
+@font-face {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/oswald-v49-latin-regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/oswald-v49-latin-regular.woff")
+      format("woff"),
+    /* Modern Browsers */ url("../fonts/oswald-v49-latin-regular.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+}
+/* oswald-500 - latin */
+@font-face {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/oswald-v49-latin-500.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/oswald-v49-latin-500.woff")
+      format("woff"),
+    /* Modern Browsers */ url("../fonts/oswald-v49-latin-500.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "Arabic";
+  font-style: normal;
+  src: url("../fonts/ReemKufiInk-Regular.ttf") format("truetype");
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.majkh {
+  font-size: 90%;
+  font-family: "Arabic", sans-serif;
+  background: -webkit-linear-gradient(rgb(71, 0, 0), rgb(255, 0, 157));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body {
+  background-image: url(../img/UEFA_Champions_League_logo.svg.png),
+    url(../img/UEFA_Champions_League_logo.svg.png),
+    url(../img/UEFA_Champions_League_logo.svg.png),
+    url(../img/UEFA_Champions_League_logo.svg.png),
+    url(../img/UEFA_Champions_League_logo.svg.png),
+    url(../img/UEFA_Champions_League_logo.svg.png),
+    linear-gradient(
+      to bottom right,
+      rgb(255, 217, 0),
+      rgb(228, 228, 228),
+      #00fd9c
+    );
+
+  background-repeat: no-repeat;
+
+  background-position: 90% 14%, 10% 20%, center, 14% 84%, 95% 74%;
+  background-size: auto;
+}
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgba(225, 174, 238, 0.849);
+  background: radial-gradient(
+    circle,
+    rgba(225, 174, 238, 0.87) 0%,
+    rgba(148, 188, 233, 0.911) 100%
+  );
+  z-index: 999;
+  backdrop-filter: blur(15px);
+}
+
+.logo {
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.uefa {
+  display: inline-block;
+  width: 70px;
+  height: 50px;
+  background: url("../img/UEFA_Champions_League_logo.svg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.player-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.player-item {
+  position: relative;
+  min-width: 200px !important;
+  min-height: 300px !important;
+}
+
+.player-item img,
+.name,
+.score {
+  transition: all 0.3s;
+}
+
+.score,
+.team-logo,
+.name {
+  position: absolute;
+}
+.score {
+  top: 13px;
+  left: 32px;
+  font-family: "Arabic";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+
+  color: #000000c0;
+}
+.name {
+  bottom: 108px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  text-transform: uppercase;
+
+  color: #000000c0;
+}
+.add-remove {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  z-index: 10;
+}
+.add-remove:hover + img {
+  filter: drop-shadow(0px 0px 50px #2576d3);
+  transform: translateY(-40px);
+}
+.add-remove:hover ~ .name,
+.add-remove:hover ~ .score {
+  transform: translateY(-40px);
+}
+.add-remove:active ~ .name,
+.add-remove:active ~ .score,
+.add-remove:active + img {
+  transform: rotateY(360deg);
+  color: rgb(0, 255, 170);
+}
+
+.gold:hover + img {
+  filter: drop-shadow(0px 0px 50px rgb(224, 51, 51));
+  transform: translateY(-40px);
+}
+
+.gold:active ~ .name,
+.gold:active ~ .score,
+.gold:active + img {
+  transform: rotateY(360deg);
+  color: rgb(0, 255, 221);
+}
+.bronze:hover + img {
+  filter: drop-shadow(0px 0px 50px #038540);
+  transform: translateY(-40px);
+}
+
+.bronze:active ~ .name,
+.bronze:active ~ .score,
+.bronze:active + img {
+  transform: rotateY(360deg);
+  color: rgb(0, 255, 221);
+}
+
+.footer {
+  padding: 15px;
+  padding-bottom: 10px;
+  background-image: linear-gradient(
+    to right,
+    rgb(51, 51, 51),
+    rgb(0, 129, 112)
+  );
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+  font-weight: bold;
+}
+
+.disabled + img {
+  filter: grayscale(1);
+  transform: scale(0.9);
+}
+.disabled:hover ~ .name,
+.disabled:hover ~ .score,
+.disabled:hover + img {
+  transform: scale(0.9);
+  color: #000000c0;
+  filter: grayscale(1);
+}
+.disabled ~ .score {
+  top: 22px;
+  transform: scale(0.8);
+}
+.disabled ~ .name,
+.disabled + img {
+  transform: scale(0.9);
+  color: #000000c0;
+  filter: grayscale(1);
+}
+
+/* animation */
+.image {
+  position: absolute;
+  top: 8px;
+  right: 50%;
+  width: 40px;
+  height: 60px;
+  opacity: 0;
+  animation: zoom 1s ease forwards;
+  z-index: 30;
+}
+@keyframes zoom {
+  0% {
+    opacity: 0.1;
+  }
+  5% {
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    right: 20px;
+  }
+}
+
+.team-select {
+  border: 2px solid rgba(255, 255, 255, 0.568);
+  width: 200px;
+  padding: 5px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  background: transparent;
+  color: #000a63;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Arabic", sans-serif;
+}
+
+.team-select option {
+  background: transparent;
+  font-weight: bold;
+}
+
+.modal-inner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  z-index: 1000;
+  padding: 15px;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  color: aliceblue;
+  box-shadow: 10px 10px 100px rgba(20, 20, 20, 0.301);
+  font-family: "Arabic";
+}
+.modal-back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background: rgba(22, 22, 22, 0.329);
+  border-radius: 10px;
+  backdrop-filter: blur(100px);
+}
+.ok {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: none;
+
+  padding: 5px;
+  background: rgba(0, 255, 115, 0.514);
+  color: aliceblue;
+}
+.modal-inner p span {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 500%;
+}
