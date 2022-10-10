@@ -2,29 +2,33 @@ localStorage.clear();
 const option = document.getElementById("team-select");
 //  db
 const db = [
-  { id: 1, name: "Makhdi", Skills: 96, Positions: "mid-player" },
-  { id: 19, name: "Sardor", Skills: 91, Positions: "mid-player" },
-  { id: 21, name: "Ramzbek", Skills: 95, Positions: "mid-player" },
+  { id: 10, name: "Makhdi", Skills: 96, Positions: "mid-player" },
+  // { id: 14, name: "Mubina", Skills: 99, Positions: "mid-player" },
+  { id: 8, name: "Ramzbek", Skills: 95, Positions: "mid-player" },
   { id: 20, name: "Izzat", Skills: 95, Positions: "mid-player" },
-  { id: 2, name: "Abubakr", Skills: 75, Positions: "attacker" },
+  { id: 19, name: "Sardor", Skills: 86, Positions: "mid-player" },
+  { id: 69, name: "Abubakr", Skills: 75, Positions: "attacker" },
   { id: 3, name: "Abdulbosit", Skills: 75, Positions: "defender" },
   { id: 4, name: "Kozim", Skills: 75, Positions: "unknown" },
   { id: 5, name: "Jasur", Skills: 82, Positions: "defender" },
   { id: 6, name: "Abdulaziz-ib", Skills: 84, Positions: "goalkeeper" },
-  { id: 7, name: "Abdulaziz-IB", Skills: 75, Positions: "attacker" },
-  { id: 8, name: "Sirojiddin", Skills: 75, Positions: "unknown" },
-  { id: 9, name: "Ibrohim", Skills: 40, Positions: "defender" },
-  { id: 10, name: "Abdulaziz-qq", Skills: 40, Positions: "right-attaker" },
+  { id: 55, name: "Abdulaziz-IB", Skills: 75, Positions: "attacker" },
+  { id: 21, name: "Sirojiddin", Skills: 75, Positions: "unknown" },   
+  { id: 9, name: "Ibrohim", Skills: 45, Positions: "defender" },
+  { id: 22, name: "Abdulaziz-qq", Skills: 40, Positions: "right-attaker" },
   { id: 11, name: "Hotam", Skills: 72, Positions: "attacker" },
   { id: 12, name: "Abdulaziz-QQ", Skills: 81, Positions: "mid-player" },
-  { id: 13, name: "Shoazam", Skills: 81, Positions: "right-mid" },
-  { id: 14, name: "Shoafzal", Skills: 51, Positions: "right-defender" },
+  { id: 99, name: "Shoazam", Skills: 81, Positions: "right-mid" },
+  { id: 13, name: "Shoafzal", Skills: 51, Positions: "right-defender" },
   { id: 15, name: "Ilyos", Skills: 70, Positions: "attacker" },
-  { id: 16, name: "Ilyos", Skills: 71, Positions: "unknown" },
+  { id: 83, name: "Ilyos", Skills: 71, Positions: "unknown" },
   { id: 17, name: "Shoislom", Skills: 81, Positions: "mid-defender" },
   { id: 18, name: "Shousmon", Skills: 84, Positions: "left-attacker" },
-  { id: 22, name: "Otabek", Skills: 82, Positions: "goalkeeper" },
+  { id: 1, name: "Otabek", Skills: 82, Positions: "goalkeeper" },
+  { id: 23, name: "Abdulmomin", Skills: 76, Positions: "defender" },
 ];
+
+window.localStorage.setItem("choosen-players", JSON.stringify(db));
 
 const players_list = document.querySelector(".player-list");
 

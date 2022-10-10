@@ -68,3 +68,9 @@ document.body.addEventListener("click", () => {
 });
 var promise = document.querySelector(".mp3");
 promise.play();
+
+const backBtn = document.createElement("button");
+backBtn.setAttribute("class", "backBtn");
+backBtn.onclick = () => window.location.replace("../views/teams.html");
+backBtn.innerText = "← Back";
+document.body.appendChild(backBtn);

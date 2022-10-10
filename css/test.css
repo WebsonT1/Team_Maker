@@ -74,6 +74,10 @@
   top: 10%;
   left: 45%;
 }
+.mider {
+  top: 30%;
+  left: 45%;
+}
 
 .player-num {
   position: absolute;
@@ -186,4 +190,33 @@
   font-weight: bold;
   font-family: cursive;
   color: #ffffff;
+}
+.narx {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+
+  width: 37%;
+  padding: 10px;
+
+  font-size: large;
+  font-weight: bold;
+  font-family: cursive;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  color: #ffffff;
+
+  backdrop-filter: blur(10px);
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.narxnavo {
+  position: absolute;
+  top: calc(50% - 500px);
+  left: 20%;
+  font-size: large;
+  font-weight: bold;
+  font-family: cursive;
+  color: #ffffff;
+  z-index: 2;
 }

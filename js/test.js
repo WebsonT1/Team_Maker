@@ -1,17 +1,18 @@
 // variables
 const db = JSON.parse(window.localStorage.getItem("choosen-players")) || [];
-const teamNum = window.localStorage.getItem("team") || 2;
-const player_list = document.querySelector(".team-carusel");
+const teamNum = window.localStorage.getItem("team") || 3;
+const player_list = document.querySelector(".carousel-inner");
 const body = window.document.querySelector("body");
 const openHtml = document.querySelector(".mystry");
 const player_positions = [
+  "striker",
   "rightattacker",
   "leftattacker",
-  "centerfullback",
   "goalkeeper",
-  "rightfullback",
+  "centerfullback",
   "leftfullback",
-  "striker",
+  "rightfullback",
+  "mider",
 ];
 
 // group by skill function
@@ -52,7 +53,7 @@ const randomize = (players, teamCount) => {
       }
     }
   } else {
-    while (team90.length - 1) {
+    while (team90.length) {
       const randomPlayer = team90.splice(getRandom(team90.length), 1)[0];
       teams[i].push(randomPlayer);
 
@@ -62,7 +63,7 @@ const randomize = (players, teamCount) => {
       }
     }
   }
-  while (team80.length) {
+  while (team80.length - 1) {
     const randomPlayer = team80.splice(getRandom(team80.length), 1)[0];
     teams[i].push(randomPlayer);
 
@@ -92,7 +93,7 @@ const randomize = (players, teamCount) => {
 
   return {
     teams: teams,
-    goldCard: team90,
+    goldCard: team80,
   };
 };
 // end function
@@ -100,49 +101,44 @@ const randomize = (players, teamCount) => {
 // pop up function
 function createVideo() {
   var promise = document.querySelector(".mp3");
-  const video = document.createElement("video");
-  const skip = document.createElement("span");
-  video.setAttribute("loop", "loop");
-  video.setAttribute("class", "imtroVideo");
-  video.setAttribute("src", "../video/intro.mp4");
-  video.setAttribute("width", "100vw");
-
-  video.addEventListener("loadedmetadata", () => {
-    video.play();
-  });
-
-  skip.setAttribute("class", "skip");
-  let i = 15;
-  const myclear = setInterval(() => {
-    i = i - 1;
-    skip.innerHTML = i;
-  }, 1000);
-
-  body.appendChild(video);
-  body.appendChild(skip);
-
+  // const video = document.createElement("video");
+  // const skip = document.createElement("span");
+  // video.setAttribute("loop", "loop");
+  // video.setAttribute("class", "imtroVideo");
+  // video.setAttribute("src", "../video/intro.mp4");
+  // video.setAttribute("width", "100vw");
+  // video.addEventListener("loadedmetadata", () => {
+  //   video.play();
+  // });
+  // skip.setAttribute("class", "skip");
+  // let i = 15;
+  // const myclear = setInterval(() => {
+    // i = i - 1;
+    // skip.innerHTML = i;
+  // }, 1000);
+  // body.appendChild(video);
+  // body.appendChild(skip);
+  // setTimeout(() => {
+    // clearInterval(myclear);
+    // skip.innerText = "Skip loading";
+    // skip.addEventListener("click", () => {
+      // video.pause();
+      // body.removeChild(video);
+      // body.removeChild(skip);
+      // promise.play("5s");
+    // });
+  // }, 15000);
   setTimeout(() => {
-    clearInterval(myclear);
-    skip.innerText = "Skip loading";
-    skip.addEventListener("click", () => {
-      video.pause();
-      body.removeChild(video);
-      body.removeChild(skip);
-      promise.play("5s");
-    });
-  }, 15000);
-
-  setTimeout(() => {
-    body.removeChild(video);
-    body.removeChild(skip);
+    // body.removeChild(video);
+    // body.removeChild(skip);
     promise.play();
-  }, 39000);
+  }, 000);
 }
 // end function
 
 // replpace function
 openHtml.addEventListener("click", (e) => {
-  window.localStorage.setItem("gold_card", JSON.stringify(goldCard));
+  window.localStorage.setItem("gold_card", JSON.stringify(allTeam[1]));
   window.location.replace("../views/mystery-player.html");
 });
 // end function
@@ -150,10 +146,21 @@ openHtml.addEventListener("click", (e) => {
 createVideo();
 const { teams, goldCard } = randomize(db, teamNum);
 
-teams.forEach((tm, i) => {
+const RTeams =
+  JSON.parse(window.localStorage.getItem("randomized_teams")) || "";
+if (!RTeams)
+  window.localStorage.setItem(
+    "randomized_teams",
+    JSON.stringify([teams, goldCard])
+  );
+
+const allTeam = JSON.parse(window.localStorage.getItem("randomized_teams"));
+
+allTeam[0].forEach((tm, i) => {
   if (i === 0) {
     let div = document.createElement("div");
     div.setAttribute("class", "carousel-item active");
+    div.setAttribute("data-bs-interval", "false");
     div.innerHTML = `
     <span class="teamname">Team ${i + 1}</span>
     <img src="../img/line-up.svg" class="d-block w-100" alt="..." />
@@ -227,3 +234,20 @@ function clock() {
   document.body.appendChild(clockP);
 }
 clock();
+
+// const narx = document.createElement("narxnavo");
+
+// function calcSum() {
+//   // todo: first we should get players count!
+//   const playerC = [teams, goldCard].flat(99).length || 0
+
+//   // todo: and we should check total sum!
+//   // ! code here
+
+//   //  todo: and we should calculate each one person!
+//   // ! code here
+
+//   // todo: finally we should output the sum!
+//   // ! code here
+// }
+// calcSum();

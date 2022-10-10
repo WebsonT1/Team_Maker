@@ -146,3 +146,16 @@ html {
   font-family: "Arabic", "Helvetica Neue", Helvetica, Arial, sans-ser;
   font-weight: bold;
 }
+
+.backBtn{
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  padding: 5px;
+  background: none;
+  backdrop-filter: blur(10px);
+  color: aliceblue;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
